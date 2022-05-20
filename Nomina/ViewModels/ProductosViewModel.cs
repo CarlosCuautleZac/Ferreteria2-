@@ -1,4 +1,5 @@
 ﻿using Nomina.Models;
+using Nomina.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -54,11 +55,16 @@ namespace Nomina.ViewModels
             set { vista = value; }
         }
 
+        //Ventas del programa
+
+        DetallesUserControl detalles;
 
         //Constructor
 
         public ProductosViewModel()
         {
+            detalles = new DetallesUserControl() { DataContext = this };
+            Vista = detalles;
             Secciones = new(conext.Seccions.OrderBy(x => x.Nombre));
             ActualizarLista();
         }
