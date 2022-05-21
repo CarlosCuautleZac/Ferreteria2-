@@ -1,5 +1,4 @@
-﻿using Nomina.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Nomina.Views
 {
     /// <summary>
-    /// Lógica de interacción para InicioView.xaml
+    /// Lógica de interacción para AgregarUserControl.xaml
     /// </summary>
-    public partial class InicioView : Window
+    public partial class AgregarUserControl : UserControl
     {
-        public InicioView()
+        public AgregarUserControl()
         {
             InitializeComponent();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var vm = (ProductosViewModel)this.DataContext;
-            vm.VerInicioCommand.Execute(null);
         }
     }
 }

@@ -9,14 +9,14 @@
     <DockPanel>
         <StackPanel Margin="5 0 0 0">
             <TextBlock FontSize="27">Detalle del producto</TextBlock>
-            <TextBlock FontSize="62" Margin="0 10 0 0">iave de awa</TextBlock>
+            <TextBlock FontSize="62" Margin="0 10 0 0" Text="{Binding Producto.Nombre}"></TextBlock>
             <WrapPanel>
-                <TextBlock FontSize="30" >$30.00</TextBlock>
+                <TextBlock FontSize="30" Text="{Binding Producto.Precio, StringFormat='{}{0:c}'}"></TextBlock>
                 <TextBlock FontSize="30" Margin="15 -2 15 0" >|</TextBlock>
-                <TextBlock FontSize="30">iaves uwu</TextBlock>
+                <TextBlock FontSize="30" Text="{Binding Producto.SeccionNavigation.Nombre}"></TextBlock>
             </WrapPanel>
 
-            <TextBlock TextWrapping="Wrap" Margin="0 10 50 0" FontSize="20">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum</TextBlock>
+            <TextBlock Text="{Binding Producto.Descripcion}" TextWrapping="Wrap" Margin="0 10 50 0" FontSize="20"></TextBlock>
         </StackPanel>
     </DockPanel>
 </UserControl>

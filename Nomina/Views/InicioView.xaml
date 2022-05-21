@@ -27,16 +27,24 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Grid.Column="2">
-                <Button>&#8722;</Button>
-                <Button>&#43;</Button>
-                <Button>&#128393;</Button>
+                <Button Command="{Binding EliminarCommand}">&#8722;</Button>
+                <Button Command="{Binding AgregarCommand}">&#43;</Button>
+                <Button Command="{Binding EditarCommand}">&#128393;</Button>
             </StackPanel>
         </Grid>
-
-        <ListBox Width="200" Margin="20" DockPanel.Dock="Left" ItemsSource="{Binding Productos}" FontSize="18">
+        <TextBlock DockPanel.Dock="Top" FontSize="20" HorizontalAlignment="Center" Foreground="Red" Text="{Binding Errores}"></TextBlock>
+        <ListBox SelectedIndex="0" Width="200" Margin="20" DockPanel.Dock="Left" SelectedItem="{Binding Producto}" ItemsSource="{Binding Productos}" SelectionChanged="ListBox_SelectionChanged" FontSize="18">
             <ListBox.Background>
                 <SolidColorBrush Color="#2a2c29" Opacity=".5"></SolidColorBrush>
             </ListBox.Background>
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Nombre}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
             
         </ListBox>
         
