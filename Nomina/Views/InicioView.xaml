@@ -33,7 +33,7 @@
             </StackPanel>
         </Grid>
         <TextBlock DockPanel.Dock="Top" FontSize="20" HorizontalAlignment="Center" Foreground="Red" Text="{Binding Errores}"></TextBlock>
-        <ListBox SelectedIndex="0" Width="200" Margin="20" DockPanel.Dock="Left" SelectedItem="{Binding Producto}" ItemsSource="{Binding Productos}" SelectionChanged="ListBox_SelectionChanged" FontSize="18">
+        <ListBox Foreground="White" SelectedIndex="0" Width="200" Margin="20" DockPanel.Dock="Left" SelectedItem="{Binding Producto}" ItemsSource="{Binding Productos}" SelectionChanged="ListBox_SelectionChanged" FontSize="18">
             <ListBox.Background>
                 <SolidColorBrush Color="#2a2c29" Opacity=".5"></SolidColorBrush>
             </ListBox.Background>

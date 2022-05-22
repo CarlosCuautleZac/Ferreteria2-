@@ -100,6 +100,9 @@ namespace Nomina.ViewModels
                 //Esto es para poder guardar el producto anterior en caso de que el cliente quiera cancelar
                 if (Producto.Id == 0)
                     Producto = ProductoTemporal;
+                else
+                    conext.Entry(Producto).Reload();
+
         }
 
 
@@ -204,7 +207,7 @@ namespace Nomina.ViewModels
                 Producto = conext.Productos.OrderBy(x => x.Nombre).FirstOrDefault();
             }
 
-            
+
             //Actualizamos Propiedades
             Actualizar("");
             //Actualizamos la lista
