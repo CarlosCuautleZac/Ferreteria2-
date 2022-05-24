@@ -197,14 +197,18 @@ namespace Nomina.ViewModels
         //DELETE
         public void Eliminar()
         {
-            var idproductoeliminado = Producto.Id;
+            var idproductoeliminado = Productos.IndexOf(Producto);
             Errores = "";
             //Eliminamos
             conext.Remove(Producto);
             if (conext.SaveChanges() >= 1)
             {
-                //Producto = conext.Productos.FirstOrDefault(X => X.Id == (idproductoeliminado + 1));
-                Producto = conext.Productos.OrderBy(x => x.Nombre).FirstOrDefault();
+                ActualizarLista();
+
+                if (idproductoeliminado >= 1)
+                    Producto = Productos[idproductoeliminado - 1];
+                else
+                    ActualizarLista();
             }
 
 

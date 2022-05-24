@@ -10,7 +10,7 @@
             <Setter Property="Margin" Value="8,0"></Setter>
             <Setter Property="Foreground" Value="#e5e5e5"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Background" Value="#ff6600"></Setter>
+            <Setter Property="Background" Value="#002870"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -22,22 +22,64 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#de5900"/>
+                    <Setter Property="Background" Value="#1d396e"/>
                     <Setter Property="Cursor" Value="Hand"></Setter>
                     <Setter Property="Effect">
                         <Setter.Value>
-                            <DropShadowEffect Color="#ebd8a7"
+                            <DropShadowEffect Color="#bba14f"
                                               ShadowDepth="0"
                                               BlurRadius="50" ></DropShadowEffect>
                         </Setter.Value>
                     </Setter>
                 </Trigger>
                 <Trigger Property="IsMouseCaptured" Value="True">
-                    <Setter Property="Background" Value="#bd4e04"/>
+                    <Setter Property="Background" Value="#002870"/>
                     <Setter Property="FontSize" Value="17"></Setter>
                     <Setter Property="Effect">
                         <Setter.Value>
-                            <DropShadowEffect Color="#ebd8a7"
+                            <DropShadowEffect Color="#bba14f"
+                                              ShadowDepth="0"
+                                              BlurRadius="12"></DropShadowEffect>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="botonform">
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Margin" Value="8,0"></Setter>
+            <Setter Property="Foreground" Value="#e5e5e5"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Background" Value="#002870"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1d396e"/>
+                    <Setter Property="Cursor" Value="Hand"></Setter>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="#bba14f"
+                                              ShadowDepth="0"
+                                              BlurRadius="50" ></DropShadowEffect>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#002870"/>
+                    <Setter Property="FontSize" Value="17"></Setter>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="#bba14f"
                                               ShadowDepth="0"
                                               BlurRadius="12"></DropShadowEffect>
                         </Setter.Value>

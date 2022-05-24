@@ -6,42 +6,57 @@
         xmlns:vm="clr-namespace:Nomina.ViewModels"
         xmlns:local="clr-namespace:Nomina.Views"
         mc:Ignorable="d"
-        Title="InicioView" Height="720" Width="1080" Background="#a6afac">
+        Title="InicioView" Height="750" Width="1080" Background="#f2f3f4">
     <Window.DataContext>
         <vm:ProductosViewModel></vm:ProductosViewModel>
     </Window.DataContext>
     <DockPanel>
-        <Grid DockPanel.Dock="Top">
+        <Grid DockPanel.Dock="Top"
+              Background="Gray"
+              Height="110">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Stretch="Fill" Source="https://pngimage.net/wp-content/uploads/2018/06/ferreteria-logo-png-7.png"></Image>
-            <StackPanel Grid.Column="1" Margin="0 2 0 0">
-                <TextBlock  FontSize="40">Ferreteria del centro</TextBlock>
-                <TextBlock FontSize="25">Inventario de productos</TextBlock>
+            <Image Stretch="Fill" VerticalAlignment="Center" Source="https://pngimage.net/wp-content/uploads/2018/06/ferreteria-logo-png-7.png"></Image>
+            <StackPanel Grid.Column="1" Margin="0 2 0 0"
+                        VerticalAlignment="Center">
+                <TextBlock  FontSize="40"
+                            Foreground="#002870"
+                            FontWeight="Bold">Ferreteria del centro</TextBlock>
+                <TextBlock FontSize="25"
+                           Foreground="#002870"
+                            FontWeight="SemiBold">Inventario de productos</TextBlock>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Grid.Column="2">
+            <StackPanel Orientation="Horizontal" Grid.Column="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                 <Button Command="{Binding EliminarCommand}">&#8722;</Button>
                 <Button Command="{Binding AgregarCommand}">&#43;</Button>
                 <Button Command="{Binding EditarCommand}">&#128393;</Button>
             </StackPanel>
         </Grid>
         <TextBlock DockPanel.Dock="Top" FontSize="20" HorizontalAlignment="Center" Foreground="Red" Text="{Binding Errores}"></TextBlock>
-        <ListBox Foreground="White" SelectedIndex="0" Width="200" Margin="20" DockPanel.Dock="Left" SelectedItem="{Binding Producto}" ItemsSource="{Binding Productos}" SelectionChanged="ListBox_SelectionChanged" FontSize="18">
+        <ListBox Foreground="White" BorderThickness="0" SelectedIndex="0" Width="200" Margin="20" DockPanel.Dock="Left" SelectedItem="{Binding Producto}" ItemsSource="{Binding Productos}" SelectionChanged="ListBox_SelectionChanged" FontSize="18">
             <ListBox.Background>
-                <SolidColorBrush Color="#2a2c29" Opacity=".5"></SolidColorBrush>
+                <SolidColorBrush Color="Transparent"
+                                 ></SolidColorBrush>
             </ListBox.Background>
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Nombre}"></TextBlock>
+                    <StackPanel Width="185"
+                                Background="#002870"
+                                Height="30"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Nombre}"
+                                   VerticalAlignment="Center"
+                                   Margin="0,2.5,0,0"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
